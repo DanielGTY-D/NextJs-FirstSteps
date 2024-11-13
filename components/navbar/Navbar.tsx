@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { RiHome3Line } from "react-icons/ri";
+import { ActiveLink } from "../active-link/ActiveLink";
 
 interface navItemsProps {
   path: string,
@@ -23,7 +24,7 @@ export const Navbar = () => {
       <div className="flex gap-4 text-xl">
         {
           navItems.map( items => 
-              <Link href={items.path} key={items.path}>{items.text}</Link>   
+              (<ActiveLink key={items.path} {...items} />  )
           )
         }
       </div>
